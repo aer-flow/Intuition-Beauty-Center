@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Intuition Beauty Center - Arta Frumuseții. Redefinită. Cel mai exclusivist salon din Cluj-Napoca.">
+    <meta name="theme-color" content="#0A0A0A">
+    
+    <!-- Open Graph SEO -->
+    <meta property="og:title" content="Intuition Beauty Center | Cluj-Napoca">
+    <meta property="og:description" content="Arta Frumuseții. Redefinită. Coafor, Unghii și Frizerie la standarde de excelență.">
+    <meta property="og:type" content="website">
+    
+    <title>Intuition Beauty Center | Arta Frumuseții. Redefinită.</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Preloader -->
+    <div id="loader">
+        <div class="loader-logo iridescent-gold">Intuition</div>
+        <div class="loader-line-wrapper">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="header">
+        <a href="#" class="logo iridescent-gold">Intuition<span>.</span></a>
+        <nav class="nav-links">
+            <a href="#despre">Despre Noi</a>
+            <a href="#servicii">Servicii</a>
+            <a href="#galerie">Galerie</a>
+            <a href="#echipa">Echipă</a>
+            <a href="#recenzii">Recenzii</a>
+        </nav>
+        <div class="btn-group" style="display: none;"> <!-- Hidden on mobile via CSS later if needed, but flex by default -->
+            <a href="https://mero.ro/p/intuitionbeautycenter" target="_blank" class="btn btn-gold" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">Programează</a>
+        </div>
+        <div class="hamburger" aria-label="Toggle Navigation" role="button" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="acasa">
+        <div class="hero-bg"></div>
+        <div class="grain-overlay"></div>
+        <canvas id="particleCanvas"></canvas>
+        <div class="glow-line"></div>
+        
+        <div class="floating-badge">Cluj-Napoca's #1 Beauty Experience</div>
+        
+        <div class="hero-content">
+            <div class="hero-left">
+                <h1 class="reveal active iridescent-gold" style="transition-delay: 1s;">Intuition</h1>
+            </div>
+            <div class="hero-right reveal active" style="transition-delay: 1.8s;">
+                <p>Arta Frumuseții. <i class="font-serif">Redefinită.</i></p>
+                <div class="btn-group">
+                    <a href="https://mero.ro/p/intuitionbeautycenter" target="_blank" class="btn btn-gold">Programează Acum</a>
+                    <a href="#despre" class="btn btn-outline">Descoperă</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator reveal active" style="transition-delay: 2.2s;">
+            <span>Scroll</span>
+            <div class="chevron"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="despre">
+        <div class="about-grid reveal">
+            <div class="about-text">
+                <h2 class="section-title" style="text-align: left;"><span>Bun Venit</span>Frumusețea ta este<br>Prioritatea noastră.</h2>
+                <p>La Intuition Beauty Center, ne dorim ca fiecare vizită să fie un moment de răsfăț și relaxare. Echipa noastră de specialiști din Cluj-Napoca este aici să îți ofere sfaturi personalizate și cele mai bune servicii pentru stilul tău.</p>
+                <p>Te invităm într-un mediu primitor, unde ne ocupăm de toate detaliile ca tu să te simți cât mai bine. Indiferent că vrei o schimbare de look sau doar un moment de liniște, suntem aici să transformăm fiecare zi într-una specială.</p>
+                
+                <div class="bento-stats">
+                    <div class="bento-item">
+                        <h3><span class="counter" data-target="10">0</span>+</h3>
+                        <span>Ani de<br>Excelență</span>
+                    </div>
+                    <div class="bento-item">
+                        <h3><span class="counter" data-target="5000">0</span>+</h3>
+                        <span>Clienți<br>Fericiți</span>
+                    </div>
+                    <div class="bento-item">
+                        <h3><span class="counter" data-target="15">0</span></h3>
+                        <span>Premii în<br>Industrie</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="assets/357565004_198575813171173_2065337747614177668_n.jpg" alt="Intuition Salon Interior">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicii">
+        <h2 class="section-title reveal"><span>Expertiza Noastră</span>Serviciile Noastre</h2>
+        <div class="services-wrapper reveal">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="coafor">Coafor</button>
+                <button class="tab-btn" data-tab="unghii">Unghii</button>
+                <button class="tab-btn" data-tab="frizerie">Frizerie</button>
+            </div>
+            
+            <!-- Hair -->
+            <div class="service-grid active" id="coafor">
+                <div class="service-card">
+                    <h4>Balayage Editorial</h4>
+                    <p>Tehnici avansate de pictură a părului pentru un aspect natural, sărutat de soare.</p>
+                    <div class="service-price">De la 450 RON</div>
+                </div>
+                <div class="service-card">
+                    <h4>Tuns & Styling</h4>
+                    <p>Arhitectură capilară personalizată formei feței tale și stilului de viață.</p>
+                    <div class="service-price">De la 180 RON</div>
+                </div>
+                <div class="service-card">
+                    <h4>Tratament Spa Păr</h4>
+                    <p>Reconstrucție profundă cu produse organice premium pentru o strălucire de sticlă.</p>
+                    <div class="service-price">De la 250 RON</div>
+                </div>
+            </div>
+
+            <!-- Nails -->
+            <div class="service-grid" id="unghii">
+                <div class="service-card">
+                    <h4>Manichiură Rusească</h4>
+                    <p>Curățare impecabilă sub cuticulă și aplicare perfectă a culorii.</p>
+                    <div class="service-price">De la 150 RON</div>
+                </div>
+                <div class="service-card">
+                    <h4>Construcție Gel</h4>
+                    <p>Arhitectură modernă, forme extreme sau naturale, durabilitate supremă.</p>
+                    <div class="service-price">De la 220 RON</div>
+                </div>
+                <div class="service-card">
+                    <h4>Nail Art Minimalist</h4>
+                    <p>Design personalizat, accente de foiță de aur și linii fine arhitecturale.</p>
+                    <div class="service-price">De la 50 RON</div>
+                </div>
+            </div>
+
+            <!-- Barber -->
+            <div class="service-grid" id="frizerie">
+                <div class="service-card">
+                    <h4>Executive Haircut</h4>
+                    <p>Tuns clasic sau modern, spălat, masaj capilar și styling premium.</p>
+                    <div class="service-price">120 RON</div>
+                </div>
+                <div class="service-card">
+                    <h4>Hot Towel Shave</h4>
+                    <p>Bărbierit tradițional cu prosop cald, spumă fină și brici, o experiență relaxantă.</p>
+                    <div class="service-price">80 RON</div>
+                </div>
+                <div class="service-card">
+                    <h4>Beard Sculpting</h4>
+                    <p>Conturare precisă, tratament cu uleiuri calde și pigmentare (la cerere).</p>
+                    <div class="service-price">70 RON</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galerie">
+        <h2 class="section-title reveal"><span>Portofoliu</span>Viziunea Noastră</h2>
+        <div class="gallery-grid reveal">
+            <div class="gallery-item"><img src="assets/480818888_17943567875952458_446060939385036057_n.jpg" alt="Work 1"><div class="gallery-overlay"><span>Editorial Hair</span></div></div>
+            <div class="gallery-item"><img src="assets/484072436_609775015384582_2483876505145866535_n.jpg" alt="Work 2"><div class="gallery-overlay"><span>Balayage</span></div></div>
+            <div class="gallery-item"><img src="assets/522884398_17960675282952458_1839374543006307010_n.jpg" alt="Work 3"><div class="gallery-overlay"><span>Nails Architecture</span></div></div>
+            <div class="gallery-item"><img src="assets/523904786_17960674562952458_1971676857880862065_n.jpg" alt="Work 4"><div class="gallery-overlay"><span>Barbering Art</span></div></div>
+            <div class="gallery-item"><img src="assets/533692662_17963203169952458_6629272498836030730_n.jpg" alt="Work 5"><div class="gallery-overlay"><span>Premium Services</span></div></div>
+            <div class="gallery-item"><img src="assets/544878851_17966014886952458_1579254414316039468_n.jpg" alt="Work 6"><div class="gallery-overlay"><span>Detailing</span></div></div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="echipa">
+        <h2 class="section-title reveal"><span>Specialiștii</span>Echipa Intuition</h2>
+        <div class="team-grid reveal">
+            <div class="team-card">
+                <div class="team-img"><img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&q=80" alt="Alex"></div>
+                <h4>Alexandru M.</h4>
+                <p>Stilist Principal</p>
+            </div>
+            <div class="team-card">
+                <div class="team-img"><img src="https://images.unsplash.com/photo-1595959183082-7b570b7e08e2?auto=format&fit=crop&q=80" alt="Elena"></div>
+                <h4>Elena D.</h4>
+                <p>Specialist Unghii</p>
+            </div>
+            <div class="team-card">
+                <div class="team-img"><img src="https://images.unsplash.com/photo-1618077360395-f3068be8e001?auto=format&fit=crop&q=80" alt="Victor"></div>
+                <h4>Victor C.</h4>
+                <p>Frizer Specialist</p>
+            </div>
+            <div class="team-card">
+                <div class="team-img"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80" alt="Maria"></div>
+                <h4>Maria S.</h4>
+                <p>Specialist Culoare</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section / Redirecting to Mero -->
+    <section id="programare" class="booking-section">
+        <h2 class="section-title reveal"><span>Planifică</span>Programează prin Mero</h2>
+        <div class="booking-container reveal" style="text-align: center; padding: 4rem 2rem;">
+            <p style="margin-bottom: 2rem; font-size: 1.2rem;">Folosim platforma Mero pentru a-ți oferi cea mai rapidă și sigură experiență de programare.</p>
+            <a href="https://mero.ro/p/intuitionbeautycenter" target="_blank" class="btn btn-gold" style="font-size: 0.95rem; padding: 1rem 2.5rem;">Programează Mero</a>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="recenzii">
+        <h2 class="section-title reveal"><span>Aprecieri</span>Ce Spun Clienții Noștri</h2>
+        <div class="testimonials reveal">
+            <div class="ticker-wrap">
+                <!-- Double ticker content for infinite seamless scroll -->
+                <div class="ticker">
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Cea mai luxoasă experiență din Cluj. Alexandru mi-a transformat complet părul. Atmosfera este ireproșabilă."</p>
+                        <div class="client-info">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80" alt="Client">
+                            <h5>Ioana Mureșan</h5>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Atenția la detalii de la secțiunea de barber este uimitoare. Victor este un adevărat maestru al briciului."</p>
+                        <div class="client-info">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80" alt="Client">
+                            <h5>Radu Popa</h5>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Manichiura rusească făcută de Elena rezistă impecabil săptămâni întregi. Recomand cu toată încrederea."</p>
+                        <div class="client-info">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80" alt="Client">
+                            <h5>Diana Rus</h5>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Un vibe cu adevărat editorial. Te simți ca un star de cinema de cum pășești pe ușă. Produse top, servicii top."</p>
+                        <div class="client-info">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80" alt="Client">
+                            <h5>Simona V.</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Duplicate for loop -->
+                <div class="ticker">
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Cea mai luxoasă experiență din Cluj. Alexandru mi-a transformat complet părul. Atmosfera este ireproșabilă."</p>
+                        <div class="client-info">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80" alt="Client">
+                            <h5>Ioana Mureșan</h5>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Atenția la detalii de la secțiunea de barber este uimitoare. Victor este un adevărat maestru al briciului."</p>
+                        <div class="client-info">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80" alt="Client">
+                            <h5>Radu Popa</h5>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Manichiura rusească făcută de Elena rezistă impecabil săptămâni întregi. Recomand cu toată încrederea."</p>
+                        <div class="client-info">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80" alt="Client">
+                            <h5>Diana Rus</h5>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Un vibe cu adevărat editorial. Te simți ca un star de cinema de cum pășești pe ușă. Produse top, servicii top."</p>
+                        <div class="client-info">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80" alt="Client">
+                            <h5>Simona V.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Location -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-info reveal">
+                <h3 class="font-serif">Găsește-ne în<br><i style="color:var(--gold)">Inima Cluj-Napocei</i></h3>
+                <div class="contact-item">
+                    <span><svg style="width:14px; height:14px; margin-right:5px; vertical-align:middle; fill:none; stroke:currentColor; stroke-width:2;" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Adresă</span>
+                    <p>Str. Lombului 2-4<br>Cluj-Napoca, 400015, România</p>
+                </div>
+                <div class="contact-item">
+                    <span><svg style="width:14px; height:14px; margin-right:5px; vertical-align:middle; fill:none; stroke:currentColor; stroke-width:2;" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg> Program</span>
+                    <p>Luni–Vineri: 09:00 – 20:00<br>Sâmbătă: 09:00 – 18:00<br>Duminică: 10:00 – 16:00</p>
+                </div>
+                <div class="contact-item">
+                    <span><svg style="width:14px; height:14px; margin-right:5px; vertical-align:middle; fill:none; stroke:currentColor; stroke-width:2;" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Contact</span>
+                    <a href="tel:+40700000000">+40 700 000 000</a>
+                    <a href="mailto:contact@intuition.ro">contact@intuition.ro</a>
+                </div>
+            </div>
+            <div class="map-container reveal">
+                <!-- Google Maps Embed -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2732.910377484931!2d23.5875225!3d46.769062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490e9ccb57743f%3A0xcb1b5e52331de5d0!2sPia%Cธa%20Unirii%2C%20Cluj-Napoca!5e0!3m2!1sen!2sro!4v1700000000000!5m2!1sen!2sro" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 Intuition Beauty Center. Cluj-Napoca.</p>
+            <div class="socials">
+                <a href="#" aria-label="Instagram">Instagram</a>
+                <a href="#" aria-label="Facebook">Facebook</a>
+                <a href="#" aria-label="TikTok">TikTok</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating UI -->
+    <a href="https://wa.me/40700000000" target="_blank" class="fab-whatsapp">
+        <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.031 22.056c-1.618 0-3.204-.424-4.595-1.227l-5.14 1.349 1.373-5.013c-.886-1.428-1.353-3.084-1.353-4.789 0-5.364 4.364-9.728 9.728-9.728 5.362 0 9.725 4.364 9.725 9.728s-4.363 9.728-9.725 9.728z"/></svg>
+    </a>
+    
+    <div class="back-to-top" id="btt">↑</div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

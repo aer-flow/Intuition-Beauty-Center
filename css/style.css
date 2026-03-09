@@ -399,6 +399,11 @@ select.form-control option { background: var(--obsidian); color: var(--ivory); }
 .client-info h5 { font-size: 0.9rem; font-weight: 500; }
 @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
+@media (max-width: 768px) {
+    .ticker-wrap { mask-image: none; -webkit-mask-image: none; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .ticker { animation: none; width: max-content; padding: 0 1rem; }
+}
+
 /* =========================================
    LOCATION & FOOTER
 ========================================= */
@@ -451,6 +456,10 @@ footer { background: #050505; padding-top: 6rem; border-top: 1px solid rgba(255,
     .booking-container { padding: 2rem; }
     .form-group.full-width { grid-column: span 1; }
     .booking-form { grid-template-columns: 1fr; }
-    .ticker-wrap { mask-image: none; -webkit-mask-image: none; }
-    .review-card { min-width: 300px; padding: 1.5rem; }
+    .ticker-wrap { mask-image: none; -webkit-mask-image: none; overflow-x: auto; padding-bottom: 1rem; }
+    .ticker { animation: none; width: max-content; display: flex; gap: 1.5rem; }
+    .review-card { min-width: 280px; padding: 1.5rem; flex-shrink: 0; }
+    .hero-content { padding-top: 2rem; }
+    .btn-group { flex-direction: column; width: 100%; align-items: center; }
+    .btn { width: 100%; max-width: 300px; text-align: center; display: flex; justify-content: center; align-items: center; }
 }

@@ -24,7 +24,7 @@
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent !important;
     animation: iridescent 4s linear infinite;
 }
 
@@ -196,8 +196,10 @@ header.scrolled {
     line-height: 0.9; letter-spacing: -2px;
     background: linear-gradient(180deg, #FFF 0%, rgba(255,255,255,0.5) 100%);
     -webkit-background-clip: text;
-    background-clip: text; /* Standard property for compatibility */
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent !important;
+    position: relative;
+    z-index: 10;
 }
 .hero-right { max-width: 400px; text-align: right; }
 .hero-right p { font-size: 1.5rem; font-weight: 300; margin-bottom: 2rem; color: rgba(255,255,255,0.8); }

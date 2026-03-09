@@ -473,6 +473,13 @@ footer { background: #050505; padding-top: 6rem; border-top: 1px solid rgba(255,
     .hero-content { padding-top: 2rem; }
     .btn-group { flex-direction: column; width: 100%; align-items: center; }
     .btn { width: 100%; max-width: 300px; text-align: center; display: flex; justify-content: center; align-items: center; }
+    
+    /* Bento Stats Mobile */
+    .bento-stats { grid-template-columns: 1fr; gap: 1rem; }
+    .bento-item { padding: 1.5rem; text-align: center; }
+    .bento-item h3 { font-size: 2.8rem; display: flex; align-items: baseline; justify-content: center; gap: 2px; }
+    .bento-item h3 span { font-size: 2.8rem; }
+    .bento-item:nth-child(1) { grid-row: span 1; }
 }
 
 @media (pointer: coarse), (max-width: 768px) {

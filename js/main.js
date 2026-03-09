@@ -223,4 +223,89 @@ document.addEventListener('DOMContentLoaded', () => {
             item.style.setProperty('--y', `${y}%`);
         });
     });
+
+    // 10. Testimonial Slider (Auto-scroll + Manual Drag)
+    const tickerWrap = document.querySelector('.ticker-wrap');
+    if (tickerWrap && !prefersReducedMotion.matches) {
+        const ticker = tickerWrap.querySelector('.ticker');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let velocity = 1; // Speed of auto-scroll
+        let direction = 1; // 1 for right, -1 for left
+        let animationId;
+        
+        // Clone for seamless loop if needed, but we already have two ticker divs in HTML
+        // So we'll just handle the loop logic between them
+        const scrollWidth = ticker.offsetWidth + 32; // card width + gap
+        
+        const autoScroll = () => {
+            if (!isDown) {
+                tickerWrap.scrollLeft += velocity * direction;
+                
+                // Seamless loop
+                if (tickerWrap.scrollLeft >= ticker.offsetWidth) {
+                    tickerWrap.scrollLeft = 0;
+                } else if (tickerWrap.scrollLeft <= 0 && direction === -1) {
+                    tickerWrap.scrollLeft = ticker.offsetWidth;
+                }
+            }
+            animationId = requestAnimationFrame(autoScroll);
+        };
+
+        tickerWrap.addEventListener('mousedown', (e) => {
+            isDown = true;
+            tickerWrap.classList.add('active');
+            startX = e.pageX - tickerWrap.offsetLeft;
+            scrollLeft = tickerWrap.scrollLeft;
+            cancelAnimationFrame(animationId);
+        });
+
+        tickerWrap.addEventListener('mouseleave', () => {
+            isDown = false;
+            tickerWrap.classList.remove('active');
+            autoScroll();
+        });
+
+        tickerWrap.addEventListener('mouseup', () => {
+            isDown = false;
+            tickerWrap.classList.remove('active');
+            autoScroll();
+        });
+
+        tickerWrap.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - tickerWrap.offsetLeft;
+            const walk = (x - startX) * 2; // scroll-fast
+            tickerWrap.scrollLeft = scrollLeft - walk;
+            
+            // Update direction based on movement
+            direction = walk > 0 ? -1 : 1;
+        });
+
+        // Touch Events
+        tickerWrap.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX - tickerWrap.offsetLeft;
+            scrollLeft = tickerWrap.scrollLeft;
+            cancelAnimationFrame(animationId);
+        });
+
+        tickerWrap.addEventListener('touchend', () => {
+            isDown = false;
+            autoScroll();
+        });
+
+        tickerWrap.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            const x = e.touches[0].pageX - tickerWrap.offsetLeft;
+            const walk = (x - startX) * 2;
+            tickerWrap.scrollLeft = scrollLeft - walk;
+            direction = walk > 0 ? -1 : 1;
+        });
+
+        // Start initial auto-scroll
+        autoScroll();
+    }
 });

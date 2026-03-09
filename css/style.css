@@ -384,16 +384,28 @@ select.form-control option { background: var(--obsidian); color: var(--ivory); }
 /* =========================================
    TESTIMONIALS SECTION
 ========================================= */
-.testimonials { overflow: hidden; padding-bottom: 4rem; }
-.ticker-wrap { width: 100%; display: flex; overflow: hidden; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
-.ticker { display: flex; gap: 2rem; animation: ticker 30s linear infinite; padding-right: 2rem;}
-.ticker-wrap:hover .ticker { animation-play-state: paused; }
+.testimonials { overflow: hidden; padding-bottom: 4rem; position: relative; }
+.ticker-wrap { 
+    width: 100%; display: flex; overflow: hidden; 
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); 
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    cursor: grab;
+    user-select: none;
+}
+.ticker-wrap:active { cursor: grabbing; }
+.ticker { display: flex; gap: 2rem; padding: 1rem 0; will-change: transform; flex-shrink: 0; }
 .review-card {
-    min-width: 400px; background: rgba(25,25,25,0.3); border: 1px solid rgba(255,255,255,0.05);
+    width: 400px; max-width: 85vw; flex-shrink: 0;
+    background: rgba(25,25,25,0.3); border: 1px solid rgba(255,255,255,0.05);
     padding: 2.5rem; border-radius: 20px;
+    display: flex; flex-direction: column;
 }
 .stars { color: var(--gold); margin-bottom: 1rem; font-size: 1.2rem; }
-.review-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; line-height: 1.6; color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; }
+.review-text { 
+    font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; 
+    line-height: 1.6; color: rgba(255,255,255,0.8); margin-bottom: 1.5rem;
+    white-space: normal; overflow-wrap: break-word;
+}
 .client-info { display: flex; align-items: center; gap: 1rem; }
 .client-info img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
 .client-info h5 { font-size: 0.9rem; font-weight: 500; }
@@ -456,9 +468,8 @@ footer { background: #050505; padding-top: 6rem; border-top: 1px solid rgba(255,
     .booking-container { padding: 2rem; }
     .form-group.full-width { grid-column: span 1; }
     .booking-form { grid-template-columns: 1fr; }
-    .ticker-wrap { mask-image: none; -webkit-mask-image: none; overflow-x: auto; padding-bottom: 1rem; }
-    .ticker { animation: none; width: max-content; display: flex; gap: 1.5rem; }
-    .review-card { min-width: 280px; padding: 1.5rem; flex-shrink: 0; }
+    .ticker-wrap { mask-image: none; -webkit-mask-image: none; cursor: default; }
+    .review-card { width: 300px; padding: 1.5rem; flex-shrink: 0; }
     .hero-content { padding-top: 2rem; }
     .btn-group { flex-direction: column; width: 100%; align-items: center; }
     .btn { width: 100%; max-width: 300px; text-align: center; display: flex; justify-content: center; align-items: center; }
